@@ -92,8 +92,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li class="active"><a href="index.html">Pagina Inicial</a></li>
-													<li><a href="cadastro.html">Cadastro</a></li>
+													<li class="active"><a href={{"inicio"}}>Pagina Inicial</a></li>
+													<li><a href={{"cadastro"}}><span class="glyphicon glyphicon-plus"></span>Cadastrar</a></li>
 													
 													
 												</ul>

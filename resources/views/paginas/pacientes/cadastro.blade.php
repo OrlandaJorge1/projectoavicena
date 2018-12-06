@@ -89,8 +89,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													<li><a href="index.html">Pagina Inicial</a></li>
-										            <li class=active><a href="cadastro.html">Cadastro</a></li>
+													<li><a href={{"inicio"}}>Pagina Inicial</a></li>
+										            <li class=active><a href={{"cadastro"}}>Cadastro</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
@@ -132,106 +132,127 @@
 
 					<!-- Identififcacao-->
 				<hr>
-				<div class="col-lg-4 contact_col">
-					<div class="info_form_container">
+				
+	<div class="col-lg-4 contact_col">
+		<div class="info_form_container">
 						<div class="info_form_title">Identificacao</div>
 						<hr class="hr">
-						<form action="#" class="info_form" id="info_form">
-							
+					
+			<form action={{"cadastrados"}} class="info_form" id="info_form"method="POST">
+							{!! csrf_field() !!}
 								<div class="form-group">
 										<label for="txt_nome">Nome da crianca:</label>
-										<input type="text" class="form-control" id="txt_nome">
-										
+										<input type="text" class="form-control" id="txt_nome" name="nome" >
 								</div>
-
+								
 								<div class="form-group">
 										<label for="txt_nome">Nome da Mae:</label>
-										<input type="text" class="form-control" id="txt_nome">
-										
-								</div>
+										<input type="text" class="form-control" id="txt_nome" name="nome_da_mae">
+							    </div>
 
 								<div class="form-group">
 										<label for="txt_nome">Nome do Pai:</label>
-										<input type="text" class="form-control" id="txt_nome">
-										
-								</div>
+										<input type="text" class="form-control" id="txt_nome" name="nome_do_pai">
+							    </div>
 
 								<div class="form-group">
 										<label for="txt_nome">Residencia:</label>
-										<input type="text" class="form-control" id="txt_nome">
-										
-								</div>
+										<input type="text" class="form-control" id="txt_nome" name="">
+							    </div>
+
 							
 								<div class="form-group">
 										<label for="txt_nome">Contacto mais Facil</label>
 										<input type="text" class="form-control" id="txt_nome">
-										
+							    </div>
+								
+								<div class="form-group">
+										<label for="txt_nome">Sexo:</label><br>
+										<input type="checkbox" name="sexo" value="M">M<br>
+										<input type="checkbox" name="sexo" value="F">F<br>
 								</div>
-							
-						</form>
-					
-					</div>
-				</div>
+
 				<!-- Identififcacao-->
 
+
 				<!-- Perinatal-->
-				<div class="col-lg-4 contact_col">
-					<div class="info_form_container">
 						<div class="info_form_title">Perintal</div>
 						<hr class="hr">
-						<form action="#" class="info_form" id="info_form">
+				
 							
 								<div class="form-group">
 										<label for="txt_nome">Data:</label>
-										<input type="date" class="form-control" id="txt_nome" >
-										
+										<input type="date" class="form-control" id="txt_nome"name="data_de_nascimento" >
 								</div>
 					
 							
 								<div class="form-group">
 									<label for="txt_nome">Peso:</label>
-									<input type="text" class="form-control" id="txt_nome" >
-									
+									<input type="text" class="form-control" id="txt_nome" name="peso_nascimento" >
 								</div>
-                
+
+								<div class="form-group">
+										<label for="txt_nome">Idade Gestacional(semanas)</label>
+										<input type="text" class="form-control" id="txt_nome" >
+								</div>
+									
+								<div class="form-group">
+											<label for="txt_nome">Local de Parto:</label><br>
+											<input type="checkbox" name="local_do_parto" value="Em Casa">Em casa
+											<input type="checkbox" name="local_do_parto" value="A Caminho">A Caminho
+											<input type="checkbox" name="local_do_parto" value="Na Maternidade">Na Maternidade
+								</div>
+										
+								<div class="form-group">
+												<label for="txt_nome">Tipo de Parto:</label><br>
+												<input type="checkbox" name="tipo_de_parto" value="Normal">Normal
+												<input type="checkbox" name="tipo_de_parto" value="Ventoso">Ventoso
+												<input type="checkbox" name="tipo_de_parto" value="Cesariana">Cesariana
+												<input type="checkbox" name="tipo_de_parto" value="Pelvico">Pelvico
+								</div>
+									  
+								<div class="form-group">
+											<label for="txt_nome">Indice de Apgar</label>
+											<input type="text" class="form-control" id="txt_nome" >
+											
+								</div>
+           
                                 
-						</form>
-					</div>
-				</div>
+					
 				<!-- Perinatal-->
 				
 				<!-- Complicacoes-->
-				<div class="col-lg-4 contact_col">
-					<div class="info_form_container">
-						<div class="info_form_title">Complicacoes</div>
-						<hr class="hr">
-						<form action="#" class="info_form" id="info_form">
+				
+				<div class="info_form_title">Complicacoes</div>
+				<hr class="hr">
+						<!--<form action="#" class="info_form" id="info_form">-->
 							
 								<div class="form-group">
 										<label for="txt_nome">Durante o Parto:</label>
 										<input type="text" class="form-control" id="txt_nome" >
-										
-									</div>
+								</div>
 
-									<div class="form-group">
-											<label for="txt_nome">Durante a Gravide:</label>
-											<input type="text" class="form-control" id="txt_nome" >
-											
-										</div>
+								<div class="form-group">
+										<label for="txt_nome">Durante a Gravide:</label>
+										<input type="text" class="form-control" id="txt_nome" >
+								</div>
 
-										<div class="form-group">
-												<label for="txt_nome">Neonatais(< 7 dias):</label>
-												<input type="text" class="form-control" id="txt_nome">
-												
-											</div>
+							<div class="form-group">
+									  <label for="txt_nome">Neonatais(< 7 dias):</label>
+									  <input type="text" class="form-control" id="txt_nome">
+							</div>
 							
-		                   
-						</form>
-					
-					</div>
-				</div>
+							<button class="info_form_button" >Cadastrar</button>
+			</form>
+		
+	    </div>
+	</div>
+	
 				<!-- Complicacoes-->
-				<button class="info_form_button" name="cadastro">Cadastrar</button>
+				
+				
+				
+				
 				<!-- contact info -->
 				<div class="contact_info">
 					<div class="row">

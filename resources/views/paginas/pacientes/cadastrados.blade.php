@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/services.css">
 <link rel="stylesheet" type="text/css" href="styles/services_responsive.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 
@@ -92,8 +93,8 @@
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
 													
-													<li><a href="index.html">Pagina Inicial</a></li>
-										            <li><a href="ficha.html">Cadastrar</a></li>
+													<li><a href={{"inicio"}}>Pagina Inicial</a></li>
+												<li><a href={{"cadastro"}}><span class="glyphicon glyphicon-plus"></span>Cadastrar</a></li>
 													
 											        
 													
@@ -145,7 +146,9 @@
 			<div class="row icon_boxes_row">
 		
 		<!-- Tabela -->
-		<table class="tabela">
+	
+				
+		<table class="table table-stripped" >
 				<tr>
 					<th>Nome</th>
 					<th>Nome do Pai</th>
@@ -155,6 +158,7 @@
 					<th>Local de Parto</th>
 					<th>Sexo</th>
 					<th>Tipo de Parto</th>
+					<th width="100px">Acoes</th>
 				</tr>
 				@foreach($pacientes as $Paciente)
 				<tr>
@@ -166,6 +170,10 @@
 					<td>{{$Paciente->local_do_parto}}</td>
 					<td>{{$Paciente->sexo}}</td>
 					<td>{{$Paciente->tipo_de_parto}}</td>
+					<td>
+					<a href="" class=" actions edit "><span class="glyphicon glyphicon-pencil"></a>
+					<a href="" class=" actions delete "><span class="glyphicon glyphicon-trash"></a>
+					</td>
 				</tr>
 		
 				@endforeach
@@ -175,39 +183,6 @@
 		<!-- Tabela -->
 		
 		
-
-			  
-	<!-- Boxes -->
-<!--<div class="boxes d-flex flex-lg-row flex-column align-items-start justify-content-start"
-		
-		<!-- Box -->
-	<!--	<div class="box">
-			<div class="background_image" style="background-image:url(images/box_1.jpg)"></div>
-			<div class="box_title">Our Vision</div>
-			<div class="box_subtitle">take a look</div>
-			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
-			<div class="button button_2 box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-		</div>
-
-		<!-- Box -->
-	<!--	<div class="box">
-			<div class="background_image" style="background-image:url(images/box_2.jpg)"></div>
-			<div class="box_title">Our Center</div>
-			<div class="box_subtitle">take a look</div>
-			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
-			<div class="button box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-		</div>
-
-		<!-- Box -->
-		<!--<div class="box">
-			<div class="background_image" style="background-image:url(images/box_3.jpg)"></div>
-			<div class="box_title">Our Mission</div>
-			<div class="box_subtitle">take a look</div>
-			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
-			<div class="button box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
-		</div>
-
-	</div>-->
 
 	<!-- Tabs -->
 

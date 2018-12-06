@@ -15,6 +15,7 @@
     return view('welcome');
 });*/
 Route::resource('/cadastrados','PaginasController');
-Route::get('/','PaginasController@index');
 Route::get('/cadastro','PaginasController@cadastro');
+Route::get('/inicio','PaginasController@index');
+
 Route::get('/cadastrados','PaginasController@cadastrados');
