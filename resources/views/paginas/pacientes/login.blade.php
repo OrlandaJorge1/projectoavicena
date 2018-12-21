@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Pacientes Cadastrados</title>
+<title>Cadastro</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
 <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
-<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
-<link rel="stylesheet" type="text/css" href="styles/services.css">
-<link rel="stylesheet" type="text/css" href="styles/services_responsive.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="styles/contact.css">
+<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 </head>
 <body>
 
@@ -29,10 +25,11 @@
 				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
 			</form>
 			<ul>
-				<li class="menu_item"><a href="index.html">Pagina Inicial</a></li>
-				<li class="menu_item"><a href="ficha.html">Ver Ficha</a></li>
-				<li class="menu_item"><a href="Actualizar_Ficha.html">Actualizar Ficha</a></li>
-				
+				<li class="menu_item"><a href="index.html">Home</a></li>
+				<li class="menu_item"><a href="#">About us</a></li>
+				<li class="menu_item"><a href="#">Services</a></li>
+				<li class="menu_item"><a href="news.html">News</a></li>
+				<li class="menu_item"><a href="contact.html">Contact</a></li>
 			</ul>
 		</div>
 		<div class="menu_social">
@@ -50,7 +47,7 @@
 	<!-- Home -->
 
 	<div class="home">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/services.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/contact.jpg" data-speed="0.8"></div>
 
 		<!-- Header -->
 
@@ -62,7 +59,7 @@
 							<div class="col">
 								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
 									<div class="logo">
-										<a href="#">Health<span>+</span></a>	
+										<a href="#">health<span>+</span></a>	
 									</div>
 									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
 										<div class="header_top_nav">
@@ -74,7 +71,7 @@
 										</div>
 										<div class="header_top_phone">
 											<i class="fa fa-phone" aria-hidden="true"></i>
-											<span>845707868</span>
+											<span>+34 586 778 8892</span>
 										</div>
 									</div>
 									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
@@ -92,12 +89,8 @@
 										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
-													
 													<li><a href={{"inicio"}}>Pagina Inicial</a></li>
-												<li><a href={{"cadastro"}}><span class="glyphicon glyphicon-plus"></span>Cadastrar</a></li>
-													
-											        
-													
+										            <li class=active><a href={{"cadastro"}}>Cadastro</a></li>
 												</ul>
 											</nav>
 											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
@@ -121,205 +114,139 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Pacientes Cadastrados</div>
+							<div class="home_title">Cadastro de pacientes</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-		<!-- Header -->
 
-	
-    
-	<!-- Services -->
-	 
-	<div class="services">
+	<!-- Contact -->
+
+	<div class="contact">
 		<div class="container">
 			<div class="row">
-				<div class="col text-center">
-					<div class="section_title"></div>
+
+		
+
+					<!-- Identififcacao-->
+				<hr>
+				
+				
+	<div class="col-lg-4 contact_col">
+		<div class="info_form_container">
+						<div class="info_form_title">Preencha os Campos Aseguir Por Favor</div>
+						<hr class="hr"> 
+							@if (isset(Auth::user()->email))
+								<script> window.location="/main/suceso";</script>
+							@endif
+						
+							@if ($message = Session::get('error'))
+								<div class="alert alert-danger alert-block">
+									<button type="button" class="close" data-dismiss="alert">x</button>
+									<strong>{{ $message }}</strong>
+								</div>
+							@endif
+
+							@if(count($errors) > 0)
+								<div class="alert alert-danger">
+									<ul>
+										@foreach($errors->all() as $error)
+											<li>{{ $error }}</li>
+										@endforeach
+									</ul>
+								</div>
+							@endif
+                      
 					
+			<form  class="info_form" id="info_form" action= "{{ url('/main/checklogin')}}"method="POST">
+							{!! csrf_field() !!}
+								<div class="form-group">
+										<label for="txt_nome">Email:</label>
+										<input type="email" class="form-control" id="txt_nome" name="email" >
+								</div>
+								<div class="form-group">
+										<label for="txt_nome">Password:</label>
+										<input type="password" class="form-control" id="txt_nome" name="password" >
+								</div>
+								
+								
+
+                           
+                                <div class="form-group">
+                                 <input type="submit" name="login" class="info_form_button" value="Login" />
+                                </div>
+           
+            </form>
+		
+	    </div>
+	</div>
+	
+				<!-- Complicacoes-->
+				
+				
+				
+				
+				<!-- contact info -->
+				<div class="contact_info">
+					<div class="row">
+						<div class="col-lg-3 offset-lg-1">
+							<div class="contact_info_list">
+								<div class="contact_info_title" class="btn btn-primary btn-add">Contact Info</div>
+								<ul>
+									<li><span>Address: </span>Mitlton Str. 26-27 Gibraltar</li>
+									<li><span>Email: </span>yourmail@gmail.com</li>
+									<li><span>Phone: </span>+53 345 7953 32453</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="contact_info_list contact_info_list_2">
+								<ul>
+									<li><span>Address: </span>Mitlton Str. 26-27 London UK</li>
+									<li><span>Email: </span>yourmail@gmail.com</li>
+									<li><span>Phone: </span>+53 345 7953 32453</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="contact_info_list">
+								<div class="contact_info_title">Opening Hours</div>
+								<ul>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Monday-Thursday</div>
+										<div class="ml-auto">8.00 - 19.00</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Friday</div>
+										<div class="ml-auto">8.00 - 18.30</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Saturday</div>
+										<div class="ml-auto">9.30 - 17.00</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Sunday</div>
+										<div class="ml-auto">9.30 - 15.00</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="row icon_boxes_row">
-		
-		<!-- Tabela -->
-	
-				
-		<table class="table table-stripped" >
-				<tr>
-					<th>Nome</th>
-					<th>Nome do Pai</th>
-					<th>Nome da Mae</th>
-					<th>Data de Nascimento</th>
-					<th>Peso</th>
-					<th>Local de Parto</th>
-					<th>Sexo</th>
-					<th>Tipo de Parto</th>
-					<th>Email</th>
-					<th>Password</th>
-					<th width="100px">Acoes</th>
-				</tr>
+		</div>
+	</div>
 
-				@foreach($pacientes as $Paciente)
+	<!-- Google Map -->
 
-				<tr>
-					<td>{{$Paciente->nome}}</td>
-					<td>{{$Paciente->nome_do_pai}}</td>
-					<td>{{$Paciente->nome_da_mae}}</td>
-					<td>{{$Paciente->data_de_nascimento}}</td>
-					<td>{{$Paciente->peso_nascimento}}</td>
-					<td>{{$Paciente->local_do_parto}}</td>
-					<td>{{$Paciente->sexo}}</td>
-					<td>{{$Paciente->tipo_de_parto}}</td>
-					<td>{{$Paciente->email}}</td>
-					<td>{{$Paciente->password}}</td>
-					
-					<td>
-					<a href="{{url("/cadastrados/{$Paciente->id}/edit")}}" class=" actions edit "><span class="glyphicon glyphicon-pencil"></a>
-					
-					<a href="" class=" actions delete "><span class="glyphicon glyphicon-trash"></a>
-					</td>
-				</tr>
-		
-				@endforeach
-		
-			</table>
-
-		<!-- Tabela -->
-		
-		
-
-	<!-- Tabs -->
-
-	<div class="tabs_container">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5">
-
-					<!-- Tabs -->
-					<div class="tabs d-flex flex-row align-items-center justify-content-start flex-wrap">
-						<div class="tab active">
-							<div class="tab_title">Discuss</div>
-							<div class="tab_text">Lorem ipsum dolor sit amet, consectetur adipis voelta.</div>
-						</div>
-						<div class="tab">
-							<div class="tab_title">Create</div>
-							<div class="tab_text">Lorem ipsum dolor sit amet, consectetur adipis voelta.</div>
-						</div>
-						<div class="tab">
-							<div class="tab_title">Brainstorm</div>
-							<div class="tab_text">Lorem ipsum dolor sit amet, consectetur adipis voelta.</div>
-						</div>
-						<div class="tab">
-							<div class="tab_title">The Project</div>
-							<div class="tab_text">Lorem ipsum dolor sit amet, consectetur adipis voelta.</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-7">
-
-					<!-- Panels -->
-					<div class="tab_panels">
-
-						<!-- Panel -->
-						<div class="tab_panel active">
-							<div class="tab_panel_content">
-								<div class="row">
-									<div class="col-lg-5">
-										<div class="tab_image"><img src="images/tabs.jpg" alt=""></div>
-									</div>
-									<div class="col-lg-7">
-										<div class="tab_list">
-											<ul>
-												<li>
-													<div class="tab_list_title">Cardiology</div>
-													<div class="tab_list_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuad.</p></div>
-												</li>
-												<li>
-													<div class="tab_list_title">Gastroenterology</div>
-													<div class="tab_list_text"><p>Donec malesuada lorem maximus mauris scele risque, at rutrum nulla dictum.</p></div>
-												</li>
-												<li>
-													<div class="tab_list_title">Medical Lab</div>
-													<div class="tab_list_text"><p>Lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus.</p></div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Panel -->
-						<div class="tab_panel">
-							<div class="tab_panel_content">
-								<div class="tab_list">
-									<ul>
-										<li>
-											<div class="tab_list_title">Cardiology</div>
-											<div class="tab_list_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuad.</p></div>
-										</li>
-										<li>
-											<div class="tab_list_title">Gastroenterology</div>
-											<div class="tab_list_text"><p>Donec malesuada lorem maximus mauris scele risque, at rutrum nulla dictum.</p></div>
-										</li>
-										<li>
-											<div class="tab_list_title">Medical Lab</div>
-											<div class="tab_list_text"><p>Lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus.</p></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Panel -->
-						<div class="tab_panel">
-							<div class="tab_panel_content">
-								<div class="tab_list">
-									<ul>
-										<li>
-											<div class="tab_list_title">Cardiology</div>
-											<div class="tab_list_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuad.</p></div>
-										</li>
-										<li>
-											<div class="tab_list_title">Gastroenterology</div>
-											<div class="tab_list_text"><p>Donec malesuada lorem maximus mauris scele risque, at rutrum nulla dictum.</p></div>
-										</li>
-										<li>
-											<div class="tab_list_title">Medical Lab</div>
-											<div class="tab_list_text"><p>Lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus.</p></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<!-- Panel -->
-						<div class="tab_panel">
-							<div class="tab_panel_content">
-								<div class="tab_list">
-									<ul>
-										<li>
-											<div class="tab_list_title">Cardiology</div>
-											<div class="tab_list_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lorem maximus malesuad.</p></div>
-										</li>
-										<li>
-											<div class="tab_list_title">Gastroenterology</div>
-											<div class="tab_list_text"><p>Donec malesuada lorem maximus mauris scele risque, at rutrum nulla dictum.</p></div>
-										</li>
-										<li>
-											<div class="tab_list_title">Medical Lab</div>
-											<div class="tab_list_text"><p>Lorem maximus mauris scelerisque, at rutrum nulla dictum. Ut ac ligula sapien. Suspendisse cursus.</p></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-					</div>
+	<div class="contact_map">
+		<!-- Google Map -->
+		<div class="map">
+			<div id="google_map" class="google_map">
+				<div class="map_container">
+					<div id="map"></div>
 				</div>
 			</div>
 		</div>
@@ -437,14 +364,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="styles/bootstrap4/popper.js"></script>
 <script src="styles/bootstrap4/bootstrap.min.js"></script>
-<script src="plugins/greensock/TweenMax.min.js"></script>
-<script src="plugins/greensock/TimelineMax.min.js"></script>
-<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="plugins/greensock/animation.gsap.min.js"></script>
-<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
 <script src="plugins/easing/easing.js"></script>
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
-<script src="js/services.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script>
+<script src="js/contact.js"></script>
 </body>
 </html>

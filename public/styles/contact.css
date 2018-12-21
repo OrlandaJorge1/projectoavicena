@@ -417,6 +417,7 @@ section
 {
 	color: #32c69a;
 }
+
 .header_top_phone
 {
 	margin-left: 44px;
@@ -846,7 +847,9 @@ section
 /*********************************
 6. Contact
 *********************************/
-
+#geral{
+	display: inline-block;
+}
 .contact
 {
 	width: 100%;

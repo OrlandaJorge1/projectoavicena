@@ -148,45 +148,15 @@
 		<!-- Tabela -->
 	
 				
-		<table class="table table-stripped" >
-				<tr>
-					<th>Nome</th>
-					<th>Nome do Pai</th>
-					<th>Nome da Mae</th>
-					<th>Data de Nascimento</th>
-					<th>Peso</th>
-					<th>Local de Parto</th>
-					<th>Sexo</th>
-					<th>Tipo de Parto</th>
-					<th>Email</th>
-					<th>Password</th>
-					<th width="100px">Acoes</th>
-				</tr>
-
-				@foreach($pacientes as $Paciente)
-
-				<tr>
-					<td>{{$Paciente->nome}}</td>
-					<td>{{$Paciente->nome_do_pai}}</td>
-					<td>{{$Paciente->nome_da_mae}}</td>
-					<td>{{$Paciente->data_de_nascimento}}</td>
-					<td>{{$Paciente->peso_nascimento}}</td>
-					<td>{{$Paciente->local_do_parto}}</td>
-					<td>{{$Paciente->sexo}}</td>
-					<td>{{$Paciente->tipo_de_parto}}</td>
-					<td>{{$Paciente->email}}</td>
-					<td>{{$Paciente->password}}</td>
-					
-					<td>
-					<a href="{{url("/cadastrados/{$Paciente->id}/edit")}}" class=" actions edit "><span class="glyphicon glyphicon-pencil"></a>
-					
-					<a href="" class=" actions delete "><span class="glyphicon glyphicon-trash"></a>
-					</td>
-				</tr>
+        @if(isset(Auth::user()->email))
+			<div class="alert alert-danger success-block">
+                <strong>Bem vindo {{ Auth::user()->name }}</strong></br>
+                <a href="{{url('main/logout')}}"> Logout</a>
+            </div>
+         
+          <!--<script>window.location="/main";</script>   //else
+		@endif
 		
-				@endforeach
-		
-			</table>
 
 		<!-- Tabela -->
 		

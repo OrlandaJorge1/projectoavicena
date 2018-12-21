@@ -128,72 +128,81 @@
 		<div class="container">
 			<div class="row">
 
-				
+		
 
 					<!-- Identififcacao-->
 				<hr>
-				
+				@if( isset($errors) && count($errors) > 0)
+			<div class="alert alert-danger">
+				@foreach($errors->all() as $errors)
+					<p>{{@erro_todos_os_campo_sao_obrigatorios}}</p>
+				@endforeach
+			</div>
+		@endif
+		
+		
 	<div class="col-lg-4 contact_col">
 		<div class="info_form_container">
+			
 						<div class="info_form_title">Identificacao</div>
 						<hr class="hr">
-					
 			<form action={{"cadastrados"}} class="info_form" id="info_form"method="POST">
-							{!! csrf_field() !!}
+					{!! csrf_field() !!}
+					
 								<div class="form-group">
-										<label for="txt_nome">Nome da crianca:</label>
-										<input type="text" class="form-control" id="txt_nome" name="nome" >
+										<label for="txt_nome">Nome (completo):</label>
+										<input type="text" class="form-control" id="txt_nome" name="nome" value="{{ old('nome')}}">
 								</div>
 								
 								<div class="form-group">
 										<label for="txt_nome">Nome da Mae:</label>
-										<input type="text" class="form-control" id="txt_nome" name="nome_da_mae">
+										<input type="text" class="form-control" id="txt_nome" name="nome_da_mae" value="{{old('nome_da_mae')}}">
 							    </div>
 
 								<div class="form-group">
 										<label for="txt_nome">Nome do Pai:</label>
-										<input type="text" class="form-control" id="txt_nome" name="nome_do_pai">
-							    </div>
+										<input type="text" class="form-control" id="txt_nome" name="nome_do_pai" value="{{old('nome_do_pai')}}">
+								</div>
 
 								<div class="form-group">
-										<label for="txt_nome">Residencia:</label>
-										<input type="text" class="form-control" id="txt_nome" name="">
-							    </div>
-
+									<label for="txt_nome">email:</label>
+									<input type="email" class="form-control" id="txt_nome" name="email" value="{{old('email')}}">
+							</div>
 							
-								<div class="form-group">
-										<label for="txt_nome">Contacto mais Facil</label>
-										<input type="text" class="form-control" id="txt_nome">
-							    </div>
-								
+	
 								<div class="form-group">
 										<label for="txt_nome">Sexo:</label><br>
 										<input type="checkbox" name="sexo" value="M">M<br>
 										<input type="checkbox" name="sexo" value="F">F<br>
 								</div>
+							</div>
+						</div>
 
 				<!-- Identififcacao-->
 
 
 				<!-- Perinatal-->
+					
+							<div class="col-lg-4 contact_col">
+							<div class="info_form_container">
 						<div class="info_form_title">Perintal</div>
 						<hr class="hr">
 				
 							
 								<div class="form-group">
 										<label for="txt_nome">Data:</label>
-										<input type="date" class="form-control" id="txt_nome"name="data_de_nascimento" >
+										<input type="date" class="form-control" id="txt_nome"name="data_de_nascimento" value="{{old('data_de_nascimento')}}">
 								</div>
 					
 							
 								<div class="form-group">
 									<label for="txt_nome">Peso:</label>
-									<input type="text" class="form-control" id="txt_nome" name="peso_nascimento" >
+									<input type="text" class="form-control" id="txt_nome" name="peso_nascimento" value="{{old('peso_nascimento')}}">
 								</div>
 
 								<div class="form-group">
-										<label for="txt_nome">Idade Gestacional(semanas)</label>
-										<input type="text" class="form-control" id="txt_nome" >
+										<label for="txt_nome">Password:</label>
+										<input type="password" class="form-control" id="txt_nome" name="password">
 								</div>
 									
 								<div class="form-group">
@@ -205,17 +214,15 @@
 										
 								<div class="form-group">
 												<label for="txt_nome">Tipo de Parto:</label><br>
-												<input type="checkbox" name="tipo_de_parto" value="Normal">Normal
-												<input type="checkbox" name="tipo_de_parto" value="Ventoso">Ventoso
-												<input type="checkbox" name="tipo_de_parto" value="Cesariana">Cesariana
-												<input type="checkbox" name="tipo_de_parto" value="Pelvico">Pelvico
+												<input type="checkbox" name="tipo_de_parto" value="Normal" >Normal
+												<input type="checkbox" name="tipo_de_parto" value="Ventoso" >Ventoso
+												<input type="checkbox" name="tipo_de_parto" value="Cesariana" >Cesariana
+												<input type="checkbox" name="tipo_de_parto" value="Pelvico" >Pelvico
 								</div>
-									  
-								<div class="form-group">
-											<label for="txt_nome">Indice de Apgar</label>
-											<input type="text" class="form-control" id="txt_nome" >
-											
-								</div>
+						</div>				  
+					</div>
+					
+								
            
                                 
 					
@@ -223,24 +230,7 @@
 				
 				<!-- Complicacoes-->
 				
-				<div class="info_form_title">Complicacoes</div>
-				<hr class="hr">
-						<!--<form action="#" class="info_form" id="info_form">-->
-							
-								<div class="form-group">
-										<label for="txt_nome">Durante o Parto:</label>
-										<input type="text" class="form-control" id="txt_nome" >
-								</div>
-
-								<div class="form-group">
-										<label for="txt_nome">Durante a Gravide:</label>
-										<input type="text" class="form-control" id="txt_nome" >
-								</div>
-
-							<div class="form-group">
-									  <label for="txt_nome">Neonatais(< 7 dias):</label>
-									  <input type="text" class="form-control" id="txt_nome">
-							</div>
+				
 							
 							<button class="info_form_button" >Cadastrar</button>
 			</form>

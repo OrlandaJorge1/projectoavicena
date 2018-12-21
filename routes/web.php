@@ -17,5 +17,11 @@
 Route::resource('/cadastrados','PaginasController');
 Route::get('/cadastro','PaginasController@cadastro');
 Route::get('/inicio','PaginasController@index');
+Route::get('/main','PaginasController@login');
+Route::post('/main/checklogin', 'PaginasController@checklogin');
+Route::get('main/suceso','PaginasController@suceso');
+Route::get('main/logout','PaginasController@logout');
 
-Route::get('/cadastrados','PaginasController@cadastrados');
+
+
+
