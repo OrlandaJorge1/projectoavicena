@@ -15,6 +15,8 @@ class CreatePacientesTable extends Migration
     {
         Schema::create('pacientes', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('nome',150);
             $table->string('nome_do_pai',150);
             $table->string('nome_da_mae',150);

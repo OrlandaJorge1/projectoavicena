@@ -27,9 +27,27 @@ class PaginasController extends Controller
 
     }
 
-    public function cadastrados(Paciente $paciente){
+    public function usuario(){
+        
+        return view ('paginas.pacientes.usuario');
+      //  return view ('paginas.pacientes.create');
+
+    }
+    public function cada(){
+        
+        return view ('paginas.pacientes.cada');
+      //  return view ('paginas.pacientes.create');
+
+    }
+    public function medico(){
+        
+        return view ('paginas.pacientes.medico');
+      //  return view ('paginas.pacientes.create');
+
+    }
+    public function cadastrados(){
        $pacientes = $paciente->all();
-        return view ('paginas.pacientes.cadastrados',compact('pacientes'));
+        return view ('paginas.pacientes.cadastrados');
        
     }
     public function edit($id){
@@ -110,5 +128,6 @@ class PaginasController extends Controller
              Auth::logout();
              return redirect('main');
          }
+         
         
 }

@@ -14,13 +14,20 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::resource('/cadastrados','PaginasController');
+Route::resource('/cadastrados','PaginasController@cadastrados');
+//Route::post('/cadastrados', function(){
+     //   return view('cadastrados');
+//});
+Route::get('/cada','PaginasController@cada');
+Route::get('/medico','PaginasController@medico');
+Route::get('/usuario','PaginasController@usuario');
 Route::get('/cadastro','PaginasController@cadastro');
 Route::get('/inicio','PaginasController@index');
 Route::get('/main','PaginasController@login');
 Route::post('/main/checklogin', 'PaginasController@checklogin');
 Route::get('main/suceso','PaginasController@suceso');
 Route::get('main/logout','PaginasController@logout');
+//Route::resource('home/logout','HomeController@index');
 
 
 

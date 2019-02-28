@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Pacientes Cadastrados</title>
+<title>Services</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
@@ -13,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/services.css">
 <link rel="stylesheet" type="text/css" href="styles/services_responsive.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 
@@ -93,18 +92,23 @@
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
 													
-													<li><a href={{"inicio"}}>Pagina Inicial</a></li>
-												<li><a href={{"cadastro"}}><span class="glyphicon glyphicon-plus"></span>Cadastrar</a></li>
+													<li><a href="index.html">Pagina Inicial</a></li>
+										            <li class=active><a href="ficha.html">Consulta</a></li>
 													
-											        
+											       
+                                                    </form>
 													
-												</ul>
-											</nav>
-											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Procurar Paciente" required="required">
-													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
-												</form>
+                                                </ul>
+                                               
+                                                       
+                                            </nav>
+                                            <div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
+                                                    <form action="#" id="search_container_form" class="search_container_form">
+                                                        <input type="text" class="search_container_input" placeholder= "Procurar Pacinte" required="required">
+                                                        <button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                                    </form>
+                                                </div>
+                                                    
 											</div>
 										</div>
 									</div>
@@ -121,7 +125,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Pacientes Cadastrados</div>
+							<div class="home_title">Ficha</div>
 						</div>
 					</div>
 				</div>
@@ -132,35 +136,119 @@
 		<!-- Header -->
 
 	
-    
+	
+
 	<!-- Services -->
 	 
+					
+	<!-- Consulta -->
+	
 	<div class="services">
 		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<div class="section_title"></div>
-					
-				</div>
-			</div>
-			<div class="row icon_boxes_row">
-		
-		<!-- Tabela -->
-	
-				
-        @if(isset(Auth::user()->email))
 			
-                <h4 class="alert alert-success">Bem vindo/a {{ Auth::user()->name }}</h4></br>
-                <a href="{{url('main/logout')}}"> Logout</a>
-            
-         
-         <!-- <script>window.location="/main";</script>   
-		@endif
+			
+ 
+	
+    <div class="col-lg-4 contact_col">
+        <div class="info_form_container">
+            <div class="info_form_title">Consulta</div>
+            <hr class="hr">
+            <form action="#" class="info_form" id="info_form">
+                    <div class="form-group">
+                            
+                            
+                    </div>
+                    <label for="txt_nome">Acompanhante:</label>
+                    <div class="input-group w3_w3layouts" >
+                            
+                             <!--Por formatar -->
+                             <input type="text" class="form-control" id="txt_nome" placeholder="Nome">
+        
+                             <!-- Por formatar -->
+                             <input type="text" class="form-control" id="txt_nome" placeholder="Parentesco">
+                            <!--<input type="select" name="conta"class="form-control" placeholder="Introduza o numero de conta" aria-describedby="basic-addon1"><!-->
+                        </div> 
+                        <br> 
+                        <div class="form-group">
+                                <label for="txt_nome">Nome do paciente:</label>
+                                <input type="text" class="form-control" id="txt_nome">
+                                
+                        </div>
+                
+                    <div class="form-group">
+                            <label for="txt_nome">Data:</label>
+                            <input type="Date" class="form-control" id="txt_nome">
+                            
+                    </div>
+
+                    <div class="form-group">
+                            <label for="txt_nome">Observacao:</label>
+                            <textarea type="text" class="form-control" id="txt_nome"></textarea>
+                            
+                    </div>
+
+                    <div class="form-group">
+                            <label for="txt_nome">Tratamento:</label>
+                            <input type="text" class="form-control" id="txt_nome">
+                            
+                    </div>
+                    <div class="form-group">
+                        <label for="txt_nome">Data da Proxima Consulta:</label>
+                        <input type="Date" class="form-control" id="txt_nome">
+                        
+                </div>
+                
+                <div class="button button_3 elements_button"><a href="#" ><span> Consulta</span>
+                    <span>send message</span></a></div>
+
+                    
+                
+            </div>
+        </div>
+        
+        
+            </div>
+        </div>
+        </form>
+
+        
 		
 
+<!--Consulta -->
+
 		<!-- Tabela -->
+	<!-- Boxes -->
+
+	<div class="boxes d-flex flex-lg-row flex-column align-items-start justify-content-start">
 		
-		
+		<!-- Box -->
+		<div class="box">
+			<div class="background_image" style="background-image:url(images/box_1.jpg)"></div>
+			<div class="box_title">Our Vision</div>
+			<div class="box_subtitle">take a look</div>
+			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
+			<div class="button button_2 box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+		</div>
+
+		<!-- Box -->
+		<div class="box">
+			<div class="background_image" style="background-image:url(images/box_2.jpg)"></div>
+			<div class="box_title">Our Center</div>
+			<div class="box_subtitle">take a look</div>
+			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
+			<div class="button box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+		</div>
+
+		<!-- Box -->
+		<div class="box">
+			<div class="background_image" style="background-image:url(images/box_3.jpg)"></div>
+			<div class="box_title">Our Mission</div>
+			<div class="box_subtitle">take a look</div>
+			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
+			<div class="button box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+		</div>
+
+	</div>
 
 	<!-- Tabs -->
 

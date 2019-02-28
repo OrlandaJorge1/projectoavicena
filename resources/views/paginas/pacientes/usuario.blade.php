@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Pacientes Cadastrados</title>
+<title>Services</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Health medical template project">
@@ -13,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/services.css">
 <link rel="stylesheet" type="text/css" href="styles/services_responsive.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
 
@@ -93,17 +92,14 @@
 											<nav class="main_nav">
 												<ul class="d-flex flex-row align-items-center justify-content-start">
 													
-													<li><a href={{"inicio"}}>Pagina Inicial</a></li>
-												<li><a href={{"cadastro"}}><span class="glyphicon glyphicon-plus"></span>Cadastrar</a></li>
+													<li><a href="index.html">Pagina Inicial</a></li>
+										            <li class=active><a href="ficha.html">Ver Ficha</a></li>
 													
 											        
 													
 												</ul>
 											</nav>
-											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
-												<form action="#" id="search_container_form" class="search_container_form">
-													<input type="text" class="search_container_input" placeholder="Procurar Paciente" required="required">
-													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+											
 												</form>
 											</div>
 										</div>
@@ -121,7 +117,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="home_content">
-							<div class="home_title">Pacientes Cadastrados</div>
+							<div class="home_title">Ficha</div>
 						</div>
 					</div>
 				</div>
@@ -132,35 +128,362 @@
 		<!-- Header -->
 
 	
-    
+	
+
 	<!-- Services -->
 	 
 	<div class="services">
 		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<div class="section_title"></div>
-					
-				</div>
-			</div>
-			<div class="row icon_boxes_row">
-		
-		<!-- Tabela -->
-	
-				
-        @if(isset(Auth::user()->email))
 			
-                <h4 class="alert alert-success">Bem vindo/a {{ Auth::user()->name }}</h4></br>
-                <a href="{{url('main/logout')}}"> Logout</a>
-            
-         
-         <!-- <script>window.location="/main";</script>   
-		@endif
+			
 		
+	
+		
+		<div class="conteiner" id="row">
+			<div class="table-responsive">
+     <table class="table table-striped table-bordered" style="width:70%">
+			<div class="tabela">Consultas</div>
+			<hr class="hr">
+			<tr>
+			  
+				<th>Data</th>
+			    <th><center>Observacao Clinica <br> Diagnostico</center></th>
+			    <th>Tratamento</th>
+			 
+			</tr>
+
+			<tr>
+					
+				<td>Paulo</td>
+				<td>89</td>
+				 <td>Masculino</td>
+				   
+			</tr>
+			
+			<tr>
+					
+				<td>Joao</td>
+				<td>13</td>
+				 <td>Feminino</td>
+				   
+		    </tr>
+
+  		</table>
+		</div>
+		
+		<!-- Consulta -->
+		
+		<!-- Vacina -->
+		<div class="conteiner" id="row">
+				<div class="table-responsive">
+		 <table class="table table-bordered" style="width:70%">
+				<div class="tabela">Vacinas</div>
+				<hr class="hr">
+				<tr>
+				  
+					<th rowspan="2" colspan="2" class="tdr"> <br> Vacina</th>
+					<th colspan="4" class="tdr">Doses</th>
+					
+				</tr>
+				
+				<tr>
+						
+					<td class="tdr">0</td>
+					<td class="tdr">1</td>
+					<td class="tdr">2</td>
+					<td class="tdr">3</td>
+					   
+				</tr>
+				
+				<tr>
+						
+					<th class="vertical" rowspan="2"><div class="vertical">BGG</div></th>
+					<th>Data</th>
+				    <td></td>	
+					<td class="tdr"></td>
+					<td class="tdr"></td>
+				    <td class="tdr"></td>
+					   
+				</tr>
+				
+				
+				<tr>
+						
+					<th>Funcionario</th>
+					<td></td>
+					<td class="tdr"></td>
+					<td class="tdr"></td>
+				    <td class="tdr"></td>
+					   
+					   
+				</tr>
+				<tr>
+						
+					<th class="vertical" rowspan="2"><div class="vertical">Polio</div></th>
+					<th>Data</th>
+				    <td></td>	
+					<td></td>
+					<td></td>
+				    <td></td>
+					   
+				</tr>
+				
+				<tr>
+						
+					<th>Funcionario</th>
+					<td></td>
+					<td></td>
+					<td></td>
+				    <td></td>
+					   
+					   
+				</tr>
+
+				<tr>
+						
+					<th class="vertical" rowspan="2"><div class="vertical">DPT + HepB <br> + Hib</div></th>
+					<th>Data</th>
+				    <td class="tdr"></td>	
+					<td></td>
+					<td></td>
+				    <td></td>
+					   
+				</tr>
+
+				<tr>
+						
+					<th>Funcionario</th>
+					<td class="tdr"></td>
+					<td></td>
+					<td></td>
+				    <td></td>
+					   
+					   
+				</tr>
+
+				<tr>
+						
+					<th class="vertical" rowspan="2"><div class="vertical">Sarampo</div></th>
+					<th>Data</th>
+				    <td class="tdr"></td>	
+					<td></td>
+					<td></td>
+				    <td></td>
+					   
+				</tr>
+
+				<tr>
+						
+					<th>Funcionario</th>
+					<td class="tdr"></td>
+					<td></td>
+					<td></td>
+				    <td></td>
+					   
+					   
+				</tr>
+
+		
+			  </table>
+			</div>
+			</div>
+			
+		
+		<!-- Vacina -->
+		<!-- Vitamina e Mebentaxol -->
+		<div class="conteiner" id="row">
+				<div class="table-responsive">
+		 <table class="table table-striped table-bordered" style="width:70%">
+				<div class="tabela">Vitaminas</div>
+				<hr class="hr">
+				<tr>
+				  
+					<th class="vertical1" rowspan="7"><div class="vertical1">Vitamina A </div></th>
+					
+				 
+				</tr>
+	
+				<tr>
+						
+					<td> </td>
+					<td>1</td>
+					<td>2</td>
+					<td>3</td>
+					<td>4</td>
+					<td>5</td>
+					   
+				</tr>
+				
+				<tr>
+						
+					<th>Data</th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					   
+				</tr>
+				<tr>
+						
+					<th>Funcionario</th>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					   
+				</tr>
+				<tr>
+						
+					<td></td>
+					<td>6</td>
+					<td>7</td>
+					<td>8</td>
+					<td>9</td>
+				    <td>10</td>
+					   
+				</tr>
+				<tr>
+						
+						<th>Data</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						   
+					   
+				</tr>
+				<tr>
+						
+						<th>Funcionario</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					
+				</tr>
+			
+	
+			  </table>
+			  </div>
+
+			  <div class="conteiner" id="row">
+					<div class="table-responsive">
+			 <table class="table table-striped table-bordered" style="width:70%">
+					<tr>
+					  
+						<th class="vertical1" rowspan="7"><div class="vertical1"> Mebentazol</div></th>
+						
+	
+					</tr>
+		
+					<tr>
+							
+						<td> </td>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						   
+					</tr>
+					
+					<tr>
+							
+						<th>Data</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						   
+					</tr>
+					<tr>
+							
+						<th>Funcionario</th>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						   
+					</tr>
+					<tr>
+							
+						<td></td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+						   
+					</tr>
+					<tr>
+							
+							<th>Data</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							   
+						   
+					</tr>
+					<tr>
+							
+							<th>Funcionario</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						
+					</tr>
+				
+		
+				  </table>
+                  </div>
+			  </div>
+
+
+		<!-- Vitamina e Mebentaxol -->
 
 		<!-- Tabela -->
+	<!-- Boxes -->
+
+	<div class="boxes d-flex flex-lg-row flex-column align-items-start justify-content-start">
 		
-		
+		<!-- Box -->
+		<div class="box">
+			<div class="background_image" style="background-image:url(images/box_1.jpg)"></div>
+			<div class="box_title">Our Vision</div>
+			<div class="box_subtitle">take a look</div>
+			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
+			<div class="button button_2 box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+		</div>
+
+		<!-- Box -->
+		<div class="box">
+			<div class="background_image" style="background-image:url(images/box_2.jpg)"></div>
+			<div class="box_title">Our Center</div>
+			<div class="box_subtitle">take a look</div>
+			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
+			<div class="button box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+		</div>
+
+		<!-- Box -->
+		<div class="box">
+			<div class="background_image" style="background-image:url(images/box_3.jpg)"></div>
+			<div class="box_title">Our Mission</div>
+			<div class="box_subtitle">take a look</div>
+			<div class="box_text">Maximus malesuada lorem max imus mauris. Proin vitae tortor nec risus tristiq ue efficitur. Aliquam luctus est urna, id aliqu am orci tempus sed. Aenean sit amet leo id enim dapibus eleifend. Phasellus ut erat dapibus, tempor sapien non, porta urna. Cras quis ante nibh. Proin tincidunt gravida interdum. Proin sed urna mauris.</div>
+			<div class="button box_button"><a href="#"><span>read more</span><span>read more</span></a></div>
+		</div>
+
+	</div>
 
 	<!-- Tabs -->
 
